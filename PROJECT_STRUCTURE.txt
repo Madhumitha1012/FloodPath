@@ -1,0 +1,55 @@
+FloodPath — Corrected Project Structure (Java 26 + Tomcat 9)
+
+FloodPath/
+├── pom.xml
+├── README.md
+├── PROJECT_STRUCTURE.txt
+├── database/
+│   └── floodpath.sql
+└── src/main/
+    ├── java/com/floodpath/
+    │   ├── config/DbConfig.java
+    │   ├── filter/AuthFilter.java
+    │   ├── model/
+    │   │   ├── User.java
+    │   │   ├── Road.java
+    │   │   └── FloodReport.java
+    │   ├── service/
+    │   │   ├── AuthService.java
+    │   │   └── FloodService.java
+    │   ├── util/Json.java
+    │   ├── web/
+    │   │   ├── LoginServlet.java
+    │   │   ├── RegisterServlet.java
+    │   │   ├── LogoutServlet.java
+    │   │   ├── DashboardServlet.java
+    │   │   ├── ReportServlet.java
+    │   │   ├── RouteServlet.java
+    │   │   ├── FloodsServlet.java
+    │   │   ├── SimulateServlet.java
+    │   │   ├── AdminActionServlet.java
+    │   │   └── ImageServlet.java
+    │   └── websocket/FloodSocket.java
+    └── webapp/
+        ├── index.jsp
+        ├── login.jsp
+        ├── register.jsp
+        ├── assets/
+        │   ├── css/style.css
+        │   └── js/app.js
+        ├── user/
+        │   ├── dashboard.jsp
+        │   ├── report.jsp
+        │   ├── route.jsp
+        │   └── history.jsp
+        ├── admin/
+        │   ├── dashboard.jsp
+        │   ├── reports.jsp
+        │   ├── roads.jsp
+        │   └── simulation.jsp
+        └── WEB-INF/
+            ├── nav.jsp
+            └── web.xml
+
+Tomcat 9 uses javax.servlet / javax.websocket and Servlet 4.0.
+Java compiler target is 26.
