@@ -25,5 +25,7 @@ COPY --from=build /app/target/FloodPath.war ${CATALINA_HOME}/webapps/ROOT.war
 
 EXPOSE 10000
 
-CMD sed -i "s/port=\"8080\"/port=\"${PORT:-10000}\"/" ${CATALINA_HOME}/conf/server.xml \
+
+CMD sed -i 's/port="8005"/port="-1"/' ${CATALINA_HOME}/conf/server.xml \
+    && sed -i "s/port=\"8080\"/port=\"${PORT:-10000}\"/" ${CATALINA_HOME}/conf/server.xml \
     && ${CATALINA_HOME}/bin/catalina.sh run
